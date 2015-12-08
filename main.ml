@@ -19,24 +19,7 @@ let diabo =
 let () = 
   Sudoku.print_sudoku_game sudoku;
 
-  let t = Sys.time() in
   let sudoku_solved = Sudoku.solve sudoku in
-  Format.eprintf "Execution time Minisat: %fs@." (Sys.time() -. t);
-  Sudoku.print_sudoku_game sudoku_solved;
-
-  let t = Sys.time() in
-  let sudoku_solved = Sudoku.solve_2 sudoku in
-  Format.eprintf "Execution time DPLL Naif: %fs@." (Sys.time() -. t);
-  Sudoku.print_sudoku_game sudoku_solved;
-
-  let t = Sys.time() in
-  let sudoku_solved = Sudoku.solve_3 sudoku in
-  Format.eprintf "Execution time DPLL BackJumping: %fs@." (Sys.time() -. t);
-  Sudoku.print_sudoku_game sudoku_solved;
-
-  let t = Sys.time() in
-  let sudoku_solved = Sudoku.solve_4 sudoku in
-  Format.eprintf "Execution time DPLL BackJump & Learn: %fs@." (Sys.time() -. t);
   Sudoku.print_sudoku_game sudoku_solved;
 
   print_newline()
